@@ -1,0 +1,453 @@
+unit Unit1;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, StdCtrls;
+
+type
+  TForm1 = class(TForm)
+    Edit1: TEdit;
+    Label1: TLabel;
+    Edit2: TEdit;
+    Label2: TLabel;
+    Edit3: TEdit;
+    Label3: TLabel;
+    Edit4: TEdit;
+    Label4: TLabel;
+    Edit5: TEdit;
+    Label5: TLabel;
+    ListBox1: TListBox;
+    Label6: TLabel;
+    Edit6: TEdit;
+    Button1: TButton;
+    Label7: TLabel;
+    Edit7: TEdit;
+    Button2: TButton;
+    Edit8: TEdit;
+    Edit9: TEdit;
+    Edit10: TEdit;
+    Edit11: TEdit;
+    Label8: TLabel;
+    Label9: TLabel;
+    Button3: TButton;
+    Button4: TButton;
+    ListBox2: TListBox;
+    Button5: TButton;
+    Button6: TButton;
+    Button7: TButton;
+    procedure Button1Click(Sender: TObject);
+    
+    procedure Edit1Change(Sender: TObject);
+    procedure Edit2Change(Sender: TObject);
+    procedure Edit3Change(Sender: TObject);
+    procedure Edit4Change(Sender: TObject);
+    procedure Edit5Change(Sender: TObject);
+    procedure Button2Click(Sender: TObject);
+    procedure Button3Click(Sender: TObject);
+    procedure Button4Click(Sender: TObject);
+    procedure Button5Click(Sender: TObject);
+    procedure Button6Click(Sender: TObject);
+    procedure FormActivate(Sender: TObject);
+    procedure Button7Click(Sender: TObject);
+ private
+    { Private declarations }
+  public
+    { Public declarations }
+    q:string;
+    end;
+
+var
+  Form1: TForm1;
+  f:integer;
+    g:integer;
+    i:integer;
+    j:integer;
+    B: array[0..50] of integer;
+    A: array[0..100] of integer;
+    e:integer;
+    w:integer;
+    y:integer;
+    u:integer;
+    l:integer;
+    h:integer;
+implementation
+uses unit2;
+
+{$R *.dfm}
+
+procedure TForm1.Button1Click(Sender: TObject);
+begin
+randomize;
+g:=random(5)+1;
+If g=1 then begin
+Edit1.Text:=IntToStr(f);
+
+edit2.Text:='';
+edit3.Text:='';
+edit4.Text:='';
+edit5.Text:='';
+A[i]:=f;
+i:=i+1;
+Edit6.Text:=Edit6.Text + IntToStr(f) +',';
+f:=f+1;
+end;
+
+If g=2 then begin
+Edit2.Text:=IntToStr(f);
+
+edit1.Text:='';
+edit3.Text:='';
+edit4.Text:='';
+edit5.Text:='';
+A[i]:=f;
+i:=i+1;
+Edit6.Text:=Edit6.Text + IntToStr(f) +',';
+f:=f+1;
+end;
+
+If g=3 then begin
+Edit3.Text:=IntToStr(f);
+
+edit1.Text:='';
+edit2.Text:='';
+edit4.Text:='';
+edit5.Text:='';
+A[i]:=f;
+i:=i+1;
+Edit6.Text:=Edit6.Text + IntToStr(f) +',';
+f:=f+1;
+end;
+
+If g=4 then begin
+Edit4.Text:=IntToStr(f);
+
+edit1.Text:='';
+edit3.Text:='';
+edit2.Text:='';
+edit5.Text:='';
+A[i]:=f;
+i:=i+1;
+Edit6.Text:=Edit6.Text + IntToStr(f) +',';
+f:=f+1;
+end;
+
+If g=5 then begin
+Edit5.Text:=IntToStr(f);
+
+edit1.Text:='';
+edit3.Text:='';
+edit4.Text:='';
+edit2.Text:='';
+A[i]:=f;
+i:=i+1;
+Edit6.Text:=Edit6.Text + IntToStr(f) +',';
+f:=f+1;
+end;
+
+
+
+end;
+
+
+
+procedure TForm1.Edit1Change(Sender: TObject);
+begin
+ListBox1.Items.Add('Поступил звонок на '+ Label1.Caption + '. ' + 'Этому звонку присвоен ID= '+ Edit1.Text);
+ListBox1.Items.add('Звонок номер '+ edit1.Text+ ' с телефона ' + label1.Caption + ' обработан и передан в базу');
+end;
+
+procedure TForm1.Edit2Change(Sender: TObject);
+begin
+ListBox1.Items.Add('Поступил звонок на '+ Label2.Caption + '. ' + 'Этому звонку присвоен ID= '+ Edit2.Text);
+ListBox1.Items.add('Звонок номер '+ edit2.Text+ ' с телефона ' + label2.Caption + ' обработан и передан в базу');
+end;
+
+procedure TForm1.Edit3Change(Sender: TObject);
+begin
+ListBox1.Items.Add('Поступил звонок на '+ Label3.Caption + '. ' + 'Этому звонку присвоен ID= '+ Edit3.Text);
+ListBox1.Items.add('Звонок номер '+ edit3.Text+ ' с телефона ' + label3.Caption + ' обработан и передан в базу');
+end;
+
+procedure TForm1.Edit4Change(Sender: TObject);
+begin
+ListBox1.Items.Add('Поступил звонок на '+ Label4.Caption + '. ' + 'Этому звонку присвоен ID= '+ Edit4.Text);
+ListBox1.Items.add('Звонок номер '+ edit4.Text+ ' с телефона ' + label4.Caption + ' обработан и передан в базу');
+end;
+
+procedure TForm1.Edit5Change(Sender: TObject);
+begin
+ListBox1.Items.Add('Поступил звонок на '+ Label5.Caption + '. ' + 'Этому звонку присвоен ID= '+ Edit5.Text);
+ListBox1.Items.add('Звонок номер '+ edit5.Text+ ' с телефона ' + label5.Caption + ' обработан и передан в базу');
+end;
+
+procedure TForm1.Button2Click(Sender: TObject);
+begin
+Edit8.Text:=IntToStr(B[0]);
+e:=b[0];
+For j:=0 to (l) do
+B[j]:=B[j+1];
+B[l-1]:=e;
+Edit7.Text:='';
+for j:=0 to (l-1) do begin
+Edit7.Text:=Edit7.Text + IntToStr(b[j]) + ',';
+end;
+end;
+
+procedure TForm1.Button3Click(Sender: TObject);
+begin
+y:=random(10)+1;
+If y>5 then begin
+Edit9.Text:=IntToStr(A[0]);
+For w:=0 to h do
+A[w]:=A[w+1];
+Edit6.Text:='';
+For w:=0 to (i-2) do
+Edit6.Text:=Edit6.Text + IntToStr(a[w]) + ',';
+i:=i-1;
+
+Edit10.Text:=IntToStr(A[0]);
+For w:=0 to h do
+A[w]:=A[w+1];
+Edit6.Text:='';
+For w:=0 to (i-2) do
+Edit6.Text:=Edit6.Text + IntToStr(a[w]) + ',';
+q:=Edit6.Text;
+i:=i-1;
+edit11.text:='';
+end;
+
+
+If y<=5 then begin
+Edit9.Text:=IntToStr(A[0]);
+For w:=0 to h do
+A[w]:=A[w+1];
+Edit6.Text:='';
+For w:=0 to (i-3) do
+Edit6.Text:=Edit6.Text + IntToStr(a[w]) + ',';
+i:=i-1;
+
+Edit10.Text:=IntToStr(A[0]);
+For w:=0 to h do
+A[w]:=A[w+1];
+Edit6.Text:='';
+For w:=0 to (i-3) do
+Edit6.Text:=Edit6.Text + IntToStr(a[w]) + ',';
+i:=i-1;
+
+Edit11.Text:=IntToStr(A[0]);
+For w:=0 to h do
+A[w]:=A[w+1];
+Edit6.Text:='';
+For w:=0 to (i-3) do
+Edit6.Text:=Edit6.Text + IntToStr(a[w]) + ',';
+i:=i-1;
+end;
+
+end;
+
+procedure TForm1.Button4Click(Sender: TObject);
+begin
+ListBox2.Items.Add('Курьер № ' + Edit8.Text + ' получил заказы №' + Edit9.Text+ ' ' + Edit10.Text + ' ' + Edit11.Text + '.' + ' Завершив доставку он вернулся в офис и встал в очередь на заказы. ');
+Edit8.Text:='';
+Edit9.Text:='';
+Edit10.Text:='';
+Edit11.Text:='';
+end;
+
+procedure TForm1.Button5Click(Sender: TObject);
+begin
+h:=random(60)+25;
+u:=0;
+While u<h do begin
+randomize;
+g:=random(5)+1;
+If g=1 then begin
+Edit1.Text:=IntToStr(f);
+
+edit2.Text:='';
+edit3.Text:='';
+edit4.Text:='';
+edit5.Text:='';
+A[i]:=f;
+i:=i+1;
+Edit6.Text:=Edit6.Text + IntToStr(f) +',';
+f:=f+1;
+end;
+
+If g=2 then begin
+Edit2.Text:=IntToStr(f);
+
+edit1.Text:='';
+edit3.Text:='';
+edit4.Text:='';
+edit5.Text:='';
+A[i]:=f;
+i:=i+1;
+Edit6.Text:=Edit6.Text + IntToStr(f) +',';
+f:=f+1;
+end;
+
+If g=3 then begin
+Edit3.Text:=IntToStr(f);
+
+edit1.Text:='';
+edit2.Text:='';
+edit4.Text:='';
+edit5.Text:='';
+A[i]:=f;
+i:=i+1;
+Edit6.Text:=Edit6.Text + IntToStr(f) +',';
+f:=f+1;
+end;
+
+If g=4 then begin
+Edit4.Text:=IntToStr(f);
+
+edit1.Text:='';
+edit3.Text:='';
+edit2.Text:='';
+edit5.Text:='';
+A[i]:=f;
+i:=i+1;
+Edit6.Text:=Edit6.Text + IntToStr(f) +',';
+f:=f+1;
+end;
+
+If g=5 then begin
+Edit5.Text:=IntToStr(f);
+
+edit1.Text:='';
+edit3.Text:='';
+edit4.Text:='';
+edit2.Text:='';
+A[i]:=f;
+i:=i+1;
+Edit6.Text:=Edit6.Text + IntToStr(f) +',';
+f:=f+1;
+end;
+u:=u+1;
+end;
+end;
+procedure TForm1.Button6Click(Sender: TObject);
+begin
+ListBox1.Items.add('Конец смены');
+ListBox2.Items.add('Конец смены');
+For i:=0 to 40 do
+A[i]:=0;
+Edit1.Text:='';
+Edit2.Text:='';
+Edit3.Text:='';
+Edit4.Text:='';
+Edit5.Text:='';
+Edit6.Text:='';
+Edit7.Text:='';
+Edit8.Text:='';
+Edit9.Text:='';
+Edit10.Text:='';
+Edit1.Text:='';
+ListBox1.Items.add('Начало новой смены');
+ListBox2.Items.add('Начало новой смены');
+f:=1;
+i:=0;
+B[0]:=1;
+for j:=1 to 9 do  begin
+B[j]:=b[j-1]+1;
+end;
+for j:=0 to 9 do begin
+Edit7.Text:=Edit7.Text + IntToStr(b[j]) + ',';
+form1.Close;
+end;
+
+end;
+
+procedure TForm1.FormActivate(Sender: TObject);
+begin
+Edit7.Text:='';
+ListBox1.Items.add('Начало новой смены');
+ListBox2.Items.add('Начало новой смены');
+f:=1;
+i:=0;
+l:=form2.l;
+B[0]:=1;
+for j:=1 to (l-1) do  begin
+B[j]:=b[j-1]+1;
+end;
+for j:=0 to (l-1) do begin
+Edit7.Text:=Edit7.Text + IntToStr(b[j]) + ',';
+end;
+end;
+
+procedure TForm1.Button7Click(Sender: TObject);
+begin
+While Edit6.text<>('') do begin
+Edit8.Text:=IntToStr(B[0]);
+e:=b[0];
+For j:=0 to (l) do
+B[j]:=B[j+1];
+B[l-1]:=e;
+Edit7.Text:='';
+for j:=0 to (l-1) do begin
+Edit7.Text:=Edit7.Text + IntToStr(b[j]) + ',';
+end;
+
+
+y:=random(10)+1;
+If y>5 then begin
+Edit9.Text:=IntToStr(A[0]);
+For w:=0 to h do
+A[w]:=A[w+1];
+Edit6.Text:='';
+For w:=0 to (i-2) do
+Edit6.Text:=Edit6.Text + IntToStr(a[w]) + ',';
+i:=i-1;
+
+Edit10.Text:=IntToStr(A[0]);
+For w:=0 to h do
+A[w]:=A[w+1];
+Edit6.Text:='';
+For w:=0 to (i-2) do
+Edit6.Text:=Edit6.Text + IntToStr(a[w]) + ',';
+q:=Edit6.Text;
+i:=i-1;
+edit11.Text:='';
+end;
+
+
+If y<=5 then begin
+Edit9.Text:=IntToStr(A[0]);
+For w:=0 to h do
+A[w]:=A[w+1];
+Edit6.Text:='';
+For w:=0 to (i-3) do
+Edit6.Text:=Edit6.Text + IntToStr(a[w]) + ',';
+i:=i-1;
+
+Edit10.Text:=IntToStr(A[0]);
+For w:=0 to h do
+A[w]:=A[w+1];
+Edit6.Text:='';
+For w:=0 to (i-3) do
+Edit6.Text:=Edit6.Text + IntToStr(a[w]) + ',';
+i:=i-1;
+
+Edit11.Text:=IntToStr(A[0]);
+For w:=0 to h do
+A[w]:=A[w+1];
+Edit6.Text:='';
+For w:=0 to (i-3) do
+Edit6.Text:=Edit6.Text + IntToStr(a[w]) + ',';
+i:=i-1;
+end;
+
+ListBox2.Items.Add('Курьер № ' + Edit8.Text + ' получил заказы №' + Edit9.Text+ ' ' + Edit10.Text + ' ' + Edit11.Text + '.' + ' Завершив доставку он вернулся в офис и встал в очередь на заказы. ');
+Edit8.Text:='';
+Edit9.Text:='';
+Edit10.Text:='';
+Edit11.Text:='';
+
+end;
+end;
+
+end.
